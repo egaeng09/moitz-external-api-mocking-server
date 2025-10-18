@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class MockKakaoMapController {
 
     private static final List<Place> SAMPLE_PLACES = List.of(
-            new Place("스타벅스", 127.0276, 37.4979),
-            new Place("이디야", 127.0280, 37.4980),
-            new Place("카페베네", 127.0265, 37.4975)
+            new Place("스타벅스", 127.0276, 37.4979, "카페", 800, "http://www.starbucks.co.kr"),
+            new Place("이디야", 127.0280, 37.4980, "카페", 700, "http://www.ediya.com"),
+            new Place("카페베네", 127.0265, 37.4975, "카페", 550, "http://www.caffebene.co.kr")
     );
 
     private final Random random = new Random();
