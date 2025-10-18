@@ -38,7 +38,7 @@ public class MockGeminiService {
 
         final String jsonResponseString = objectMapper.writeValueAsString(recommendationResponse);
         try {
-            Thread.sleep(2000 + new Random().nextInt(2000));
+            Thread.sleep(1000 + new Random().nextInt(1000));
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }

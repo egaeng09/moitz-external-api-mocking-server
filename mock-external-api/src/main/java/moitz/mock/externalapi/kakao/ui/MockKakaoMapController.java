@@ -29,7 +29,7 @@ public class MockKakaoMapController {
             @RequestParam(required = false) Integer radius,
             @RequestParam(required = false) Integer size
     ) throws InterruptedException {
-        Thread.sleep(200 + random.nextInt(200));
+        Thread.sleep(50 + random.nextInt(50));
 
         List<Place> result = SAMPLE_PLACES;
         if (size != null && size > 0 && size < SAMPLE_PLACES.size()) {
@@ -41,7 +41,7 @@ public class MockKakaoMapController {
 
     @GetMapping("/point.json")
     public Place searchPoint(@RequestParam String query) throws InterruptedException {
-        Thread.sleep(100 + random.nextInt(100));
+        Thread.sleep(50 + random.nextInt(50));
         return SAMPLE_PLACES.get(random.nextInt(SAMPLE_PLACES.size()));
     }
 
