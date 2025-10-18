@@ -3,6 +3,7 @@ package moitz.mock.externalapi.gemini.application;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
+import java.util.Random;
 import moitz.mock.externalapi.gemini.application.dto.MockGeminiRequest;
 import moitz.mock.externalapi.gemini.application.dto.MockGeminiResponse;
 import moitz.mock.externalapi.gemini.application.dto.Recommendation;
@@ -36,6 +37,11 @@ public class MockGeminiService {
         final RecommendationResponse recommendationResponse = new RecommendationResponse(recommendations);
 
         final String jsonResponseString = objectMapper.writeValueAsString(recommendationResponse);
+        try {
+            Thread.sleep(2000 + new Random().nextInt(2000));
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
 
         return MockGeminiResponse.of(jsonResponseString);
     }
