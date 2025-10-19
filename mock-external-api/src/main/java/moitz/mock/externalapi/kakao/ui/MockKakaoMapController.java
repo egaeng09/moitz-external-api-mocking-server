@@ -29,7 +29,7 @@ public class MockKakaoMapController {
             @RequestParam(required = false) Integer radius,
             @RequestParam(required = false) Integer size
     ) throws InterruptedException {
-        Thread.sleep(50 + random.nextInt(50));
+        Thread.sleep(200 + random.nextInt(200));
 
         List<Place> result = SAMPLE_PLACES;
         if (size != null && size > 0 && size < SAMPLE_PLACES.size()) {
